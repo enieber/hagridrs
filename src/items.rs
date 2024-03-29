@@ -78,11 +78,11 @@ struct Stock {
 }
 
 impl Stock {
-    fn started(item: Item, date: DateTime<Local>) -> Stock {
+    fn started(item: Item, date: DateTime<Local>, initial_value: i32) -> Stock {
         Stock {
           id: Uuid::new_v4(),
           item,
-          value: 0
+          value: initial_value
         }
     }
 
@@ -100,7 +100,7 @@ mod stock_tests {
     use super::*;
     
     #[test]
-    fn started_stock_item() {
+    fn started_stock_item_with_zero_item() {
         let item = Item {
             code: String::from("1234"),
             name: String::from("Papel Toalha"),
@@ -108,8 +108,22 @@ mod stock_tests {
             validity_date: Local::now(),
             rule_code: RuleCode::EAN,
         };
-        let stock = Stock::started(item, Local::now());
+        let stock = Stock::started(item, Local::now(), 0);
         assert_eq!(stock.value, 0)
     }
+
+    #[test]
+    fn started_stock_item_with_10_item() {
+        let item = Item {
+            code: String::from("1234"),
+            name: String::from("Papel Toalha"),
+            classification: vec!["utencilios".to_string(), "cozinha".to_string()],
+            validity_date: Local::now(),
+            rule_code: RuleCode::EAN,
+        };
+        let stock = Stock::started(item, Local::now(), 10);
+        assert_eq!(stock.value, 10)
+    }
+
 }
 
