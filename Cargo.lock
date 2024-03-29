@@ -65,6 +65,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "barcoders"
+version = "1.0.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "298326aba91e0dd1acba62767652c7c9f4d45ada6804110278680c4f0c6e8ab7"
+
+[[package]]
 name = "bitflags"
 version = "1.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -149,6 +155,7 @@ name = "hagrid"
 version = "0.1.0"
 dependencies = [
  "async-trait",
+ "barcoders",
  "chrono",
  "cqrs-es",
  "serde",

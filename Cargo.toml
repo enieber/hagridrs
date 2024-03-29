@@ -11,6 +11,7 @@ cqrs-es = "0.4.11"
 async-trait = "0.1.52"
 serde = { version = "1.0", features = ["derive"]}
 tokio = { version = "1", features = ["full"] }
+barcoders = "1.0.2"
 
 [dependencies.uuid]
 version = "1.8.0"

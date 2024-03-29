@@ -6,7 +6,7 @@ This project is guadian of Stock and help to control in or out items of stock.
 
 To create this project is some steps:
 
-- [ ] initial stock
+- [x] initial stock
 - [ ] options to output items of stock
 - [ ] options to input items of stock
 - [ ] count items of stock
